@@ -22,12 +22,17 @@ class ServiceTypeController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'service_type' => 'required | string|max:255',
+            'description' => 'required | string'
+
+        ]);
         $service = new service_type;
         $service -> name = $request->service_type;
         $service -> description = $request->description;
         $service -> meta_info = $request->meta_info;
         $service->save();
-        return redirect()->back();
+        return redirect()->back()->with("success",'upload Successfull');
 
 
     }
