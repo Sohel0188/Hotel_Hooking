@@ -22,6 +22,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),
         Route::post('/store',[ServiceTypeController::class, 'store'])->name('store');
         Route::get('/edit',[ServiceTypeController::class, 'edit'])->name('edit_service_type');
         Route::get('/delete',[ServiceTypeController::class, 'delete'])->name('delete_service_type');
+
+   });
+   Route:: group(['prefix'=>'service'],function(){
+      
    });
     
 });

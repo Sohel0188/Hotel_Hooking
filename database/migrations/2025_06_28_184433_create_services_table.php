@@ -21,10 +21,9 @@ return new class extends Migration
             $table->string('service_rules')->nullable();
             $table->text('terms_and_conditions')->nullable();
             $table->string('is_active')->default('1')->comment('1=active','0==inactive');
-
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.
